@@ -1,0 +1,163 @@
+@font-face {
+  font-family: OnestThin;
+  src: url(../fonts/Onest/Onest-Thin.ttf);
+}
+@font-face {
+  font-family: OnestExLight;
+  src: url(../fonts/Onest/Onest-ExtraLight.ttf);
+}
+@font-face {
+  font-family: OnestLight;
+  src: url(../fonts/Onest/Onest-Light.ttf);
+}
+@font-face {
+  font-family: OnestRegular;
+  src: url(../fonts/Onest/Onest-Regular.ttf);
+}
+@font-face {
+  font-family: OnestMedium;
+  src: url(../fonts/Onest/Onest-Medium.ttf);
+}
+@font-face {
+  font-family: OnestSemiBold;
+  src: url(../fonts/Onest/Onest-SemiBold.ttf);
+}
+@font-face {
+  font-family: OnestBold;
+  src: url(../fonts/Onest/Onest-Bold.ttf);
+}
+@font-face {
+  font-family: OnestExBold;
+  src: url(../fonts/Onest/Onest-ExtraBold.ttf);
+}
+
+.OnestThin {
+  font-family: OnestThin;
+}
+.OnestExLight {
+  font-family: OnestExLight;
+}
+.OnestLight {
+  font-family: OnestLight;
+}
+.OnestRegular {
+  font-family: OnestRegular;
+}
+.OnestMedium {
+  font-family: OnestMedium;
+}
+.OnestSemiBold {
+  font-family: OnestSemiBold;
+}
+.OnestBold {
+  font-family: OnestBold;
+}
+.OnestExBold {
+  font-family: OnestExBold;
+}
+
+
+.sidebar_link:hover span svg path{
+    fill: #fff;
+    stroke: #fff;
+}
+.sidebar_link:hover span svg circle{
+    fill: #fff;
+}
+.darkSidebar_link:hover span svg path{
+    fill: #101010;
+    stroke: #101010;
+}
+.darkSidebar_link:hover span svg circle{
+    fill: #101010;
+}
+.sidebar_link.active{
+   background-color: #101010;
+   color: #fff;
+}
+
+.darkSidebar_link.active{
+    background-color: #fff;
+    color: #101010;
+ }
+
+.sidebar_link.active span svg path{
+    fill: #fff;
+    stroke: #fff;
+}
+
+.darkSidebar_link.active span svg path{
+    fill: #101010;
+    stroke: #101010;
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 1500px) {
+  .login_wrap {
+    width: 1200px;
+    margin: auto;
+    margin-top: 90px;
+  }
+  .login_img {
+    min-width: 590px;
+    width: 590px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 1370px) {
+  .post_box {
+    width: 524px;
+  }
+}
+
+@media only screen and (max-width: 1260px) {
+  .post_box {
+    width: 450px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .login_wrap {
+    width: 95%;
+    margin: auto;
+    margin-top: 90px;
+  }
+  .login_img {
+    min-width: 572px;
+    width: 572spx;
+    margin: auto;
+  }
+  .post_box {
+    width: 450px;
+  }
+  .mini_post {
+    width: 300px;
+    min-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  .post_box {
+    width: 98%;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  .login_wrap {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .login_wrap {
+    width: 97%;
+  }
+}
+
+body {
+  /* background-color: #f9f9f9 !important; */
+}
