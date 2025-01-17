@@ -1,5 +1,7 @@
 import { ApiServiceInterface } from "../interfaces/ApiServiceInterface"
 import axios, { AxiosInstance, AxiosResponse }  from 'axios'
+import AuthService from "./AuthService";
+import { StorageConst } from "../data/const";
 
 export default class ApiService implements ApiServiceInterface{
 
@@ -10,7 +12,8 @@ export default class ApiService implements ApiServiceInterface{
             baseURL: import.meta.env.VITE_BASE_URL,
             timeout: 1000,
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem(StorageConst.AUTH_TOKEN)}`
             }
         })
     }
@@ -45,7 +48,16 @@ export default class ApiService implements ApiServiceInterface{
     }
     
     handleError(result:AxiosResponse){
-        throw new Error(result.data.message ?? "Error occured while fetching data!")
+        let message = result.data.message ?? "Error occured while fetching data!";
+
+        if(result.status == 401){
+            AuthService.logout()
+        }else if(result.status == 422){
+            for(let err in result.data.data){
+                message += `${err} <br />`
+            }
+        }
+        throw new Error(message)
     }
 
 }

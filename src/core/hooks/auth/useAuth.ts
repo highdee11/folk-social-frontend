@@ -31,8 +31,8 @@ const useAuth = ()=> {
             console.log(data)
         }catch(e:any){
             setIsLoading(false)
-            console.log(e);
             setError(e.response?.data?.message || e.message)
+            console.log(e);
             throw e
         }
         

@@ -11,8 +11,8 @@ const Layout = () => {
                     </svg>
                 </button>
 
-                <aside id="sidebar-multi-level-sidebar" className="fixed top-0 left-0 z-40 w-[290px] h-screen transition-transform -translate-x-full lg:translate-x-0" aria-label="Sidebar">
-                    <div className="h-full bg-white dark:bg-darkColor dark:border-r dark:border-r-grayText">
+                <aside id="sidebar-multi-level-sidebar" className="fixed top-0 left-0 z-40 w-[240px] h-screen transition-transform -translate-x-full lg:translate-x-0" aria-label="Sidebar">
+                    <div className="h-full bg-white dark:bg-darkColor ">
                         <Sidebar />
                     </div>
                 </aside>

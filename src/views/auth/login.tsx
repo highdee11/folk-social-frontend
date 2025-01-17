@@ -5,11 +5,14 @@ import { SignInCredentials, SignInRequest } from '../../core/interfaces/AuthInte
 import { FormEvent, useState } from 'react';
 import Error from '../../component/shared/Error';
 import PrimaryButton from '../../component/shared/PrimaryButton';
+import { useNavigate } from 'react-router-dom';
+import { routes } from '../../core/data/route';
 
 
 const Login = () => {
 
     const { signin, isLoading, error } = useAuth()
+    const navigate = useNavigate()
 
     const [ credentials, setCredentails] = useState<SignInCredentials>({username: "", password: ""})
     const handleChanges = (field:string, value:any)=> setCredentails({...credentials, [field]: value })
@@ -23,7 +26,9 @@ const Login = () => {
         }
 
         signin(payload)
-        // .then(())
+        .then(()=> {
+            navigate(routes.home)
+        })
     }
 
     return (

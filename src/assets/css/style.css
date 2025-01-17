@@ -56,39 +56,43 @@
   font-family: OnestExBold;
 }
 
-
+svg {
+  transition: none !important;
+} 
 .sidebar_link:hover span svg path{
-    fill: #fff;
-    stroke: #fff;
+    /* fill: #101010; */
+    /* stroke: #101010; */
 }
 .sidebar_link:hover span svg circle{
-    fill: #fff;
+    /* fill: #101010; */
 }
+
 .darkSidebar_link:hover span svg path{
-    fill: #101010;
-    stroke: #101010;
+    /* fill: #101010; */
+    /* stroke: #101010; */
 }
 .darkSidebar_link:hover span svg circle{
-    fill: #101010;
+    /* fill: #101010; */
 }
-.sidebar_link.active{
-   background-color: #101010;
-   color: #fff;
+
+
+.sidebar_link.active{ 
+   color: #C11574;
 }
 
 .darkSidebar_link.active{
-    background-color: #fff;
-    color: #101010;
- }
+    color: #C11574;
+}
+
 
 .sidebar_link.active span svg path{
-    fill: #fff;
-    stroke: #fff;
+    fill: #C11574;
+    stroke: #C11574;
 }
 
 .darkSidebar_link.active span svg path{
-    fill: #101010;
-    stroke: #101010;
+    fill: #C11574;
+    stroke: #C11574;
 }
 
 
