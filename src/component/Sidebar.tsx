@@ -1,34 +1,15 @@
-import { NavLink } from 'react-router-dom';
-import { FaSun } from "react-icons/fa6";
-import { FaMoon } from "react-icons/fa";
-import { useEffect, useState } from 'react';
-import { initFlowbite } from 'flowbite';
+
 import SideBarMenuItem from './shared/SideMenuItem';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../store';
-import { ThemeConst } from '../core/data/const';
-import { ThemeSliceActions } from '../store/slices/ThemeSlice';
+import AuthService from '../core/services/AuthService';
+import ToggleThemeItem from './shared/ToggleThemeItem';
+import useTheme from '../core/hooks/useTheme';
 
 const Sidebar = () => {
-
-    const dispatch = useDispatch()
+    const { darkMode } = useTheme()
     const user = useSelector((state: RootState)=> state.auth.user)
-    const darkMode = useSelector((state: RootState)=> state.theme.mode) == ThemeConst.DARK
-    
-    const toggleTheme = () => {
-        dispatch(ThemeSliceActions.setMode(!darkMode? ThemeConst.DARK: ThemeConst.LIGHT))
-    };
-
-    useEffect(() => {
-        initFlowbite(); 
-        if (darkMode) {
-            document.documentElement.classList.add("dark");
-        } else {
-            document.documentElement.classList.remove("dark");
-        }
-    })
-
-
+  
     return (
         <div className="px-4 pt-12 flex flex-col justify-between h-full">
             <div className=" h-full">
@@ -85,39 +66,12 @@ const Sidebar = () => {
 
             <hr className='dark:border-darkFaintGray border-lightFaintGray'/>
 
-            <ul className='mt-2 space-y-2 py-3'>
-                <li className=' pl-5'>
-                    <button onClick={toggleTheme}>
-                        {
-                            darkMode ?
-                                (
-                                    <div
-                                        className='flex justify-start items-center gap-2 cursor-pointer'
-                                    >
-                                        <FaMoon
-                                            color='#fff'
-                                        />
-                                        <span className='OnestRegular text-sm text-darkColor dark:text-white'>
-                                            Dark Mode
-                                        </span>
-                                    </div>
-                                )
-                                :
-                                (
-                                    <div className='flex justify-start items-center gap-2 cursor-pointer'
-                                    >
-                                        <FaSun />
-                                        <span className='OnestRegular text-sm text-darkColor dark:text-white'>
-                                            Light Mode
-                                        </span>
-                                    </div>
-                                )
-                        }
-                    </button>
+            <ul className='mt-2 space-y-3 py-3 mb-5'>
+                <li className='pl-5'>
+                    <ToggleThemeItem />
                 </li>
-
                 <li>
-                    <NavLink to="/login" className="OnestRegular text-sm text-[#EA4435] text-base ease-in-out duration-150 py-2 rounded-lg flex gap-3 justify-start items-center w-fit pl-5">
+                    <button onClick={AuthService.logout} className="OnestRegular text-sm text-[#EA4435] ease-in-out duration-150 py-2 rounded-lg flex gap-3 justify-start items-center w-fit pl-5">
                         <span>
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.0165 7.38948V6.45648C15.0165 4.42148 13.3665 2.77148 11.3315 2.77148H6.45646C4.42246 2.77148 2.77246 4.42148 2.77246 6.45648V17.5865C2.77246 19.6215 4.42246 21.2715 6.45646 21.2715H11.3415C13.3705 21.2715 15.0165 19.6265 15.0165 17.5975V16.6545" stroke="#EA4435" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -126,7 +80,7 @@ const Sidebar = () => {
                             </svg>
                         </span>
                         Logout
-                    </NavLink>
+                    </button>
                 </li>
             </ul>
         </div>

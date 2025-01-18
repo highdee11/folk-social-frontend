@@ -5,6 +5,6 @@ export class StorageConst {
 
 export class ThemeConst {
     public static LIGHT = 'light';
-    public static DARK = 'dart';
+    public static DARK = 'dark';
 }
  

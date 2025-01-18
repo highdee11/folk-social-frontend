@@ -8,6 +8,7 @@ import { AuthSliceAction } from "../../../store/slices/AuthSlice";
 const useAuth = ()=> {
     const dispatch = useDispatch();
     
+    const signInData: SignInCredentials = {username: import.meta.env.VITE_DEMO_USERNAME, password: import.meta.env.VITE_DEMO_PASSWORD}
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
     
@@ -22,7 +23,7 @@ const useAuth = ()=> {
             const service = new ApiService();
             const data: DefaultRequestResponse = 
                 await service.post<DefaultRequestResponse, any>("/api/auth/login", credentials)
-
+            
             // Set token and user
             dispatch(AuthSliceAction.setAuthToken(data.data.token))
             dispatch(AuthSliceAction.setUser(data.data))
@@ -30,6 +31,7 @@ const useAuth = ()=> {
             setIsLoading(false)
             console.log(data)
         }catch(e:any){
+            console.log(e)
             setIsLoading(false)
             setError(e.response?.data?.message || e.message)
             console.log(e);
@@ -47,6 +49,7 @@ const useAuth = ()=> {
 
     return {
         error,
+        signInData,
         isLoading, 
         signin,
         signOut

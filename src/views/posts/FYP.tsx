@@ -1,20 +1,19 @@
 
-import ChatBG from '../assets/images/chatBg.png';
+import ChatBG from '../../assets/images/chatBg.png';
 import { initFlowbite } from "flowbite";
-import Avatar from '../assets/images/avatar1.png';
+import Avatar from '../../assets/images/avatar1.png';
 import { useEffect } from "react";
-const Home = () => {
-    useEffect(() => {
-        initFlowbite();
-    })
+import { toast } from 'react-toastify';
+
+
+const FYP = ()=> { 
 
     return (
-        <div className=" flex justify-center relative gap-4 lg:w-auto w-[98%] lg:mx-0 mx-auto">
-            <div id="posts" className="h-full overflow-y-scroll px-3 ml-10 md:ml-20 md:mr-auto ">
+        <div id="posts" className="h-full overflow-y-scroll px-3 ml-10 md:ml-20 md:mr-auto ">
                 <ul className="space-y-5 w-full flex justify-between items-start flex-col">
 
                     <li className="w-full">
-                        <div className=" w-[638px] post_box mx-auto bg-white dark:bg-darkColor dark:border dark:border-grayText rounded-[8px] shadow-md pt-5">
+                        <div className=" w-[600px] post_box mx-auto dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px] pt-5">
 
                             <div className=" flex justify-between items-start pb-2 px-4">
 
@@ -104,7 +103,7 @@ const Home = () => {
                     </li>
 
                     <li className="w-full">
-                        <div className=" w-[638px] post_box mx-auto bg-white dark:bg-darkColor dark:border dark:border-grayText rounded-[8px] shadow-md pt-5">
+                        <div className=" w-[600px] post_box mx-auto dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px] pt-5">
 
                             <div className=" flex justify-between items-start pb-2 px-4">
 
@@ -195,8 +194,7 @@ const Home = () => {
 
                 </ul>
             </div>
-        </div>
-    );
+    )
 }
 
-export default Home;
+export default FYP;
