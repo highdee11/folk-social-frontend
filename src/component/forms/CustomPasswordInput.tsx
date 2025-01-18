@@ -30,7 +30,7 @@ const CustomPasswordInput = ({
                         type={showPassword? 'text':'password'}
                         id={name} 
                         name={name}
-                        className="bg-lightFaintGray dark:bg-darkFaintGray border border-[#001C001A] text-[#101010] dark:text-white text-sm rounded-[4px] focus:ring-[#101010] focus:border-[#101010] block w-full p-2.5 pl-12 h-[50px] OnestRegular placeholder:text-[#001C0033]"
+                        className="bg-lightFaintGray dark:bg-darkFaintGray border border-[#001C001A] text-[#101010] dark:text-gray-200 text-sm rounded-[4px] focus:ring-[#101010] focus:border-[#101010] block w-full p-2.5 pl-12 h-[50px] OnestRegular placeholder:text-[#001C0033]"
                         placeholder={name} 
                         required />
 
@@ -38,10 +38,10 @@ const CustomPasswordInput = ({
                         <span className='absolute right-4 top-4'>
                             {!showPassword? (<FaEyeSlash
                                 size={20}
-                                className="text-[#101010] dark:text-white"
+                                className="text-[#101010] dark:text-gray-200"
                             />):(<FaEye
                                 size={20}
-                                className="text-[#101010] dark:text-white"
+                                className="text-[#101010] dark:text-gray-200"
                             />)}
                         </span>
                     </button>

@@ -77,7 +77,7 @@ export default class ApiService implements ApiServiceInterface{
             }
         }
 
-        // if(this.shouldNotify) 
+        if(this.shouldNotify) 
         NotificationService.error(message)
     }
 

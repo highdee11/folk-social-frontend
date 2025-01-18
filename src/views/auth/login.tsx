@@ -43,7 +43,7 @@ const Login = () => {
                 </div>
 
                 <div className="login_wrap w-full h-full flex flex-col justify-around lg:ml-auto lg:mx-0 mx-auto sm:pt-12 pt-0">
-                    <div className="text-[#101010] dark:text-white">
+                    <div className="text-[#101010] dark:text-gray-200">
                         <p className='OnestMedium text-3xl  text-center mb-2'> Welcome To Folk Social 👋 </p>
                         <p className=' text-[#96A0AD] OnestRegular text-sm w-[320px] mx-auto text-center'>
                             We've missed you! Please sign in to catch up on what you've missed
@@ -97,8 +97,9 @@ const Login = () => {
                         </div>
                     </div>
 
-                    <div className="w-fit mx-auto bg-lightFaintGray dark:bg-darkFaintGray py-3 px-5 rounded-full">
-                        <ToggleThemeItem />
+                    
+                    <div className="mx-auto">
+                    <ToggleThemeItem />
                     </div>
                 </div>
 

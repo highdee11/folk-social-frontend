@@ -13,7 +13,7 @@ const CustomInput: React.FC<CustomInputProps> = ({ label, name, type, value, pre
                     type={type} 
                     id={name} 
                     name={name}
-                    className="bg-lightFaintGray dark:bg-darkFaintGray border border-[#001C001A] text-[#101010] dark:text-white text-sm rounded-[4px] focus:ring-[#101010] focus:border-[#101010]  block w-full p-2.5 pl-12 h-[50px] OnestRegular placeholder:text-[#001C0033]"
+                    className="bg-lightFaintGray dark:bg-darkFaintGray border border-[#001C001A] text-[#101010] dark:text-gray-200 text-sm rounded-[4px] focus:ring-[#101010] focus:border-[#101010]  block w-full p-2.5 pl-12 h-[50px] OnestRegular placeholder:text-[#001C0033]"
                     placeholder={`Enter ${label}`}
                     required />
             </div>
