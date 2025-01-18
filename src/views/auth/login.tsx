@@ -1,5 +1,4 @@
 import LoginImg from '../../assets/images/UP.png';
-import { FaEye, FaEyeSlash } from "react-icons/fa";
 import useAuth from '../../core/hooks/auth/useAuth';
 import { SignInCredentials, SignInRequest } from '../../core/interfaces/AuthInterface';
 import { ChangeEvent, FormEvent, useState } from 'react';

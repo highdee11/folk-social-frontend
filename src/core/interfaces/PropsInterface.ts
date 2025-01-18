@@ -21,7 +21,7 @@ export interface CustomInputProps {
     name: string;
     value: string;
     onChange: ChangeEventHandler,
-    prefixIcon: ReactNode
+    prefixIcon?: ReactNode
 }
 
 export interface CustomPasswordInputProps extends CustomInputProps {
