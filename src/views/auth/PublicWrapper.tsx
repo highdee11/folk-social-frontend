@@ -8,6 +8,7 @@ import { useEffect } from "react"
 const PublicWrapper = (WrappedComponent: any)=> {
 
     return ()=> {
+        
         const hasSession = useSelector((state: RootState)=> state.auth.auth_token) != null
         const navigate = useNavigate()
         

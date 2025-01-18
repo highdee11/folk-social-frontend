@@ -18,6 +18,7 @@ const useUser = ()=> {
         dispatch(AuthSliceAction.setUser(data.data))
     }
 
+
     return {
         user,
         authToken,
