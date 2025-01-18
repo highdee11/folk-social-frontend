@@ -1,11 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import Login from "../views/auth/Login";
-import Home from "../views/Index";
-import Layout from "../component/Layout";
+import Home from "../views/posts"; 
 import Search from "../views/Search";
 import { routes } from "../core/data/route";
-import AuthenticatedView from "../views/auth/AuthenticatedView";
-
+import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper"; 
 
 const AppRoutes = () => {
     return (
@@ -14,7 +12,7 @@ const AppRoutes = () => {
             {/* ==================== AUTH ROUTE  ======================= */}
             <Route path={routes.login} element={<Login />}> </Route>
 
-            <Route path="" element={<AuthenticatedView />}>
+            <Route path="" element={<AuthenticatedWrapper />}>
                 <Route path={routes.home} element={<Home />}></Route>
                 <Route path={routes.search} element={<Search />} />
             </Route>

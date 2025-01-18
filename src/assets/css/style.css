@@ -59,20 +59,10 @@
 svg {
   transition: none !important;
 } 
-.sidebar_link:hover span svg path{
-    /* fill: #101010; */
-    /* stroke: #101010; */
-}
-.sidebar_link:hover span svg circle{
-    /* fill: #101010; */
-}
+ 
 
-.darkSidebar_link:hover span svg path{
-    /* fill: #101010; */
-    /* stroke: #101010; */
-}
-.darkSidebar_link:hover span svg circle{
-    /* fill: #101010; */
+.dark span svg path{
+  stroke: white;
 }
 
 
@@ -105,7 +95,7 @@ svg {
   .login_wrap {
     width: 1200px;
     margin: auto;
-    margin-top: 90px;
+     
   }
   .login_img {
     min-width: 590px;
@@ -129,7 +119,7 @@ svg {
   .login_wrap {
     width: 95%;
     margin: auto;
-    margin-top: 90px;
+     
   }
   .login_img {
     min-width: 572px;
