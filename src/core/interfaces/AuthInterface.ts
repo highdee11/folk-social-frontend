@@ -3,6 +3,15 @@ export interface SignInCredentials {
     password: string;
 }
 
+export interface SignUpRequest{
+    firstname: string
+    lastname: string
+    email: string
+    username: string
+    password: string;
+    dob: string;
+}
+
 export interface SignInRequest {
     email: string;
     password: string;

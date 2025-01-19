@@ -1,14 +1,21 @@
 import { useState } from "react";
 import { DefaultRequestResponse } from "../../interfaces/ApiServiceInterface";
-import { SignInCredentials, SignInRequest } from "../../interfaces/AuthInterface";
+import { SignInCredentials, SignInRequest, SignUpRequest } from "../../interfaces/AuthInterface";
 import ApiService from "../../services/ApiService";
-import { useDispatch, useSelector } from "react-redux"; 
+import { useDispatch } from "react-redux"; 
 import { AuthSliceAction } from "../../../store/slices/AuthSlice";
 
 const useAuth = ()=> {
     const dispatch = useDispatch();
     
     const signInData: SignInCredentials = {username: import.meta.env.VITE_DEMO_USERNAME, password: import.meta.env.VITE_DEMO_PASSWORD}
+    const signUpData: SignUpRequest = {
+        username: import.meta.env.VITE_DEMO_USERNAME, password: import.meta.env.VITE_DEMO_PASSWORD,
+        firstname: "",
+        lastname: "",
+        email: "",
+        dob:""
+    }
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
     
@@ -22,7 +29,7 @@ const useAuth = ()=> {
         try{
             const service = new ApiService();
             const data: DefaultRequestResponse = 
-                await service.post<DefaultRequestResponse, any>("/api/auth/login", credentials)
+            await service.post<DefaultRequestResponse, any>("/api/auth/login", credentials)
             
             // Set token and user
             dispatch(AuthSliceAction.setAuthToken(data.data.token))
@@ -40,6 +47,28 @@ const useAuth = ()=> {
         
     }
 
+    const SignUp = async (credentials: SignInRequest)=> {
+         
+        if(isLoading) return;
+
+        setIsLoading(true)
+        setError(null)
+        try{
+            const service = new ApiService();
+            const data: DefaultRequestResponse = 
+            await service.post<DefaultRequestResponse, any>("/api/auth/create-account", credentials)
+
+            setIsLoading(false)
+            console.log(data)
+        }catch(e:any){
+            console.log(e)
+            setIsLoading(false)
+            setError(e.response?.data?.message || e.message)
+            console.log(e);
+            throw e
+        }
+        
+    }
     const signOut = async ()=> {
 
         dispatch(AuthSliceAction.signout()); 
@@ -48,11 +77,13 @@ const useAuth = ()=> {
     }
 
     return {
-        error,
-        signInData,
-        isLoading, 
         signin,
-        signOut
+        SignUp,
+        signOut,
+        error,
+        isLoading, 
+        signInData,
+        signUpData,
     }
 }
 

@@ -20,6 +20,7 @@ export interface CustomInputProps {
     type: string;
     name: string;
     value: string;
+    attributes?: any;
     onChange: ChangeEventHandler,
     prefixIcon?: ReactNode
 }
