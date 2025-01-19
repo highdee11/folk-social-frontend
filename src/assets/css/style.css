@@ -85,7 +85,11 @@ svg {
     stroke: #C11574;
 }
 
-
+.profileBg{
+  background-image: url("../images/profileBg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
 
 
