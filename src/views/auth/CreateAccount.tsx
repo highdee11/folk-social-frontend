@@ -39,11 +39,9 @@ const CreateAccount = () => {
             })
     }
     const handleDateFormat = (value: any)=>{
-        
         const [year, month, day] = value.split('-');
         // Format the date as MM/DD/YYYY
         return  `${day}-${month}-${year}`;
-
     }
 
     return (
@@ -94,7 +92,7 @@ const CreateAccount = () => {
                             label="Dob"
                             name='dob'
                             attributes={{
-                                max: "12-31-2030",
+                                max: "12-31-2025",
                                 placeholder:"dd-MM-YYYY"
                             }}
                             type='date'
