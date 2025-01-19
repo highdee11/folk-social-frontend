@@ -2,5 +2,6 @@ export const routes = {
     home: '/',
     feed: '/feed',
     login: '/login',
-    search: '/search'
+    search: '/search',
+    profile: '/profile'
 }

@@ -4,6 +4,7 @@ import Home from "../views/posts";
 import Search from "../views/Search";
 import { routes } from "../core/data/route";
 import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper"; 
+import Profile from "../views/Profile";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +16,8 @@ const AppRoutes = () => {
             <Route path="" element={<AuthenticatedWrapper />}>
                 <Route path={routes.home} element={<Home />}></Route>
                 <Route path={routes.search} element={<Search />} />
+                <Route path={routes.profile} element={<Profile />} />
+
             </Route>
 
         </Routes>
