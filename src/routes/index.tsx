@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../views/auth/Login";
 import Home from "../views/posts";
 import Search from "../views/Search";
@@ -20,6 +20,7 @@ const AppRoutes = () => {
                 <Route path={routes.home} element={<Home />}></Route>
                 <Route path={routes.search} element={<Search />} />
                 <Route path={routes.profile} element={<Profile />} >
+                    <Route index element={<Navigate to="videos" replace />} />
                     <Route path="videos" element={<Videos />} />
                     <Route path="reposts" element={<Repost/>} />
                     <Route path="liked" element={<Liked/>} />

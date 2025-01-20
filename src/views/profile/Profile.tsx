@@ -10,7 +10,7 @@ const Profile = () => {
 
                 <div className=" flex justify-start items-center gap-6">
 
-                    <div className=" md:w-[190px] w-[110px] md:h-[190px] h-[110px] bg-[#B190B6]  rounded-full">
+                    <div className=" md:w-[190px] sm:w-[110px] w-[80px] md:h-[190px] sm:h-[110px] h-[80px] bg-[#B190B6]  rounded-full">
                         <img src={Avatar} className=' rounded-full h-full w-full' />
                     </div>
 
@@ -62,7 +62,7 @@ const Profile = () => {
                         <li className="me-2">
                             <Link
                                 to="videos"
-                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white  border-b-2 ${location.pathname.endsWith("/videos") ? activeClass : "border-transparent"
+                                className={`inline-block sm:px-12 px-5 pb-2 text-grayText dark:text-white  border-b-2 ${location.pathname.endsWith("/videos") ? activeClass : "border-transparent"
                                     }   rounded-t-lg `}>
                                 Videos
                             </Link>
@@ -70,7 +70,7 @@ const Profile = () => {
                         <li className="me-2">
                             <Link
                                 to="reposts"
-                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white ${location.pathname.endsWith("/reposts") ? activeClass : "border-transparent"
+                                className={`inline-block sm:px-12 px-5 pb-2 text-grayText dark:text-white ${location.pathname.endsWith("/reposts") ? activeClass : "border-transparent"
                                     }  rounded-t-lg`}>
                                 Reposts
                             </Link>
@@ -78,7 +78,7 @@ const Profile = () => {
                         <li className="me-2">
                             <Link
                                 to="liked"
-                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white ${location.pathname.endsWith("/liked") ? activeClass : "border-transparent"
+                                className={`inline-block sm:px-12 px-5 pb-2 text-grayText dark:text-white ${location.pathname.endsWith("/liked") ? activeClass : "border-transparent"
                                     }  rounded-t-lg`}>
                                 Liked
                             </Link>

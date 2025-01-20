@@ -1,6 +1,5 @@
 import PicOne from '../../assets/images/post1.png';
 import PicTwo from '../../assets/images/pic2.png';
-import PicThree from '../../assets/images/pic3.png';
 
 
 const Liked = () => {
