@@ -7,7 +7,7 @@ import { NotificationService } from "./NotificationService";
 export default class ApiService implements ApiServiceInterface{
 
     private client:AxiosInstance;
-    private shouldNotify:boolean = false
+    private shouldNotify:boolean = true
     private token = localStorage.getItem(StorageConst.AUTH_TOKEN) || null
 
     public setShouldNotify(v: boolean){
@@ -66,14 +66,18 @@ export default class ApiService implements ApiServiceInterface{
 }       );
     }
     
-    handleError(result:AxiosResponse){  
+    handleError(result:AxiosError){  
+        console.log(result)
         let message = result.data?.message || result.message || "Error occured while fetching data!";
  
         if(result.status == 401){
             AuthService.logout()
         }else if(result.status == 422){
-            for(let err in result.data.data){
-                message += `${err} <br />`
+            message = "";
+            const errorObject:Record<string, any> =  result?.response?.data?.data || {}
+
+            for(let err in errorObject){
+                message += `${errorObject[err]}`
             }
         }
 
