@@ -1,14 +1,10 @@
-import { ReactNode } from 'react';
 import LoginImg from '../../assets/images/UP.png';
 import ToggleThemeItem from '../../component/shared/ToggleThemeItem';
+import { AuthWrapper } from '../../core/interfaces/AuthInterface';
 
-interface ComponentProps { 
-    form:ReactNode;
-    title:string;
-    description: string;
-}
 
-const AuthPageWrapper = ({form, title, description}:ComponentProps) => {
+
+const AuthPageWrapper = ({form, title, description}:AuthWrapper) => {
 
     return (
         <div className='dark:bg-darkColor h-screen'>

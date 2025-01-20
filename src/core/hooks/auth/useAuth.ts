@@ -36,12 +36,9 @@ const useAuth = ()=> {
             dispatch(AuthSliceAction.setUser(data.data))
 
             setIsLoading(false)
-            console.log(data)
         }catch(e:any){
-            console.log(e)
             setIsLoading(false)
             setError(e.response?.data?.message || e.message)
-            console.log(e);
             throw e
         }
         
@@ -55,16 +52,11 @@ const useAuth = ()=> {
         setError(null)
         try{
             const service = new ApiService();
-            const data: DefaultRequestResponse = 
             await service.post<DefaultRequestResponse, any>("/api/auth/create-account", credentials)
-
             setIsLoading(false)
-            console.log(data)
         }catch(e:any){
-            console.log(e)
             setIsLoading(false)
             setError(e.response?.data?.message || e.message)
-            console.log(e);
             throw e
         }
         
