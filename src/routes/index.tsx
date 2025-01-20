@@ -6,7 +6,8 @@ import { routes } from "../core/data/route";
 import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper";
 import Profile from "../views/profile/Profile";
 import Videos from "../views/profile/Videos";
-
+import Repost from "../views/profile/Repost";
+import Liked from "../views/profile/Liked";
 
 const AppRoutes = () => {
     return (
@@ -20,6 +21,8 @@ const AppRoutes = () => {
                 <Route path={routes.search} element={<Search />} />
                 <Route path={routes.profile} element={<Profile />} >
                     <Route path="videos" element={<Videos />} />
+                    <Route path="reposts" element={<Repost/>} />
+                    <Route path="liked" element={<Liked/>} />
                 </Route>
             </Route>
 

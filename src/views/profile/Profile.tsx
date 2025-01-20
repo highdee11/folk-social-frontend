@@ -1,89 +1,92 @@
-import { Link, Outlet, useSearchParams } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import Avatar from '../../assets/images/highdee.ai.jpeg';
 const Profile = () => {
-    const [searchParams] = useSearchParams();
     const activeClass = "text-primary border-b-2 border-primary";
-    const feed = searchParams.get('feed');
+    const location = useLocation();
 
     return (
         <>
-            <div className=" relative lg:w-auto w-[98%] mx-auto bg-darkColor dark:bg-white mt-12 rounded-[12px] py-5 px-8 flex justify-between items-center shadow-sm profileBg">
+            <div className=" relative lg:w-auto w-[98%] mx-auto bg-darkColor mt-12 rounded-[12px] py-8 md:px-8 px-2 flex justify-between items-center gap-5 shadow-sm profileBg">
 
                 <div className=" flex justify-start items-center gap-6">
 
-                    <div className=" w-[190px] h-[190px] bg-[#B190B6]  rounded-full">
-                        <img src={Avatar} className=' rounded-full' />
+                    <div className=" md:w-[190px] w-[110px] md:h-[190px] h-[110px] bg-[#B190B6]  rounded-full">
+                        <img src={Avatar} className=' rounded-full h-full w-full' />
                     </div>
 
                     <div>
-                        <p className=' text-white dark:text-darkColor OnestSemiBold text-xl'>
+                        <p className=' text-white OnestSemiBold text-xl'>
                             highdee.ai
                         </p>
 
                         <div className=' mt-3'>
-                            <ul className="flex gap-4">
+                            <ul className="flex flex-wrap sm:gap-4 gap-2">
                                 <li>
                                     <p className=" text-base flex justify-start items-center gap-1">
-                                        <span className='dark:text-darkColor text-white OnestMedium'>2563</span>
-                                        <span className='dark:text-darkColor text-white text-sm'>Following</span>
+                                        <span className=' text-white OnestMedium'>2563</span>
+                                        <span className=' text-white text-sm'>Following</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p className=" text-base  flex justify-start items-center gap-1">
-                                        <span className='dark:text-darkColor text-white OnestMedium'>2563</span>
-                                        <span className='dark:text-darkColor text-white text-sm'>Followers</span>
+                                        <span className=' text-white OnestMedium'>2563</span>
+                                        <span className=' text-white text-sm'>Followers</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p className=" text-base  flex justify-start items-center gap-1">
-                                        <span className='dark:text-darkColor text-white OnestMedium'>661</span>
-                                        <span className='dark:text-darkColor text-white text-sm'>Likes</span>
+                                        <span className=' text-white OnestMedium'>661</span>
+                                        <span className=' text-white text-sm'>Likes</span>
                                     </p>
                                 </li>
                             </ul>
                         </div>
 
-                        <p className=' text-white dark:text-darkColor mt-2'>
+                        <p className=' text-white mt-2'>
                             Software Engineer 🇳🇬
                         </p>
                     </div>
                 </div>
 
-                <div>
-                    <button className="px-5 py-2 bg-white dark:bg-darkColor rounded-[8px]  text-darkColor">
+                <div className=' sm:block hidden'>
+                    <button className="px-5 py-2 bg-white rounded-[8px]  text-darkColor text-nowrap">
                         Edit Profile
                     </button>
                 </div>
             </div>
 
-            <div className=' mt-8'>
+
+            <div className=' mt-8 lg:w-auto w-[98%] mx-auto'>
                 <div className='w-full border-b'>
                     <ul className="flex flex-wrap -mb-px w-fit mr-auto">
                         <li className="me-2">
                             <Link
-                                to="?feed=videos"
-                                className={`inline-block px-12 pb-2 border-b-2 ${feed == 'videos' && activeClass || 'border-transparent'}  rounded-t-lg `}>
+                                to="videos"
+                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white  border-b-2 ${location.pathname.endsWith("/videos") ? activeClass : "border-transparent"
+                                    }   rounded-t-lg `}>
                                 Videos
                             </Link>
                         </li>
                         <li className="me-2">
                             <Link
-                                to="?feed=repost"
-                                className={`inline-block px-12 pb-2 ${feed == 'repost' && activeClass || 'border-transparent'} rounded-t-lg`}>
+                                to="reposts"
+                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white ${location.pathname.endsWith("/reposts") ? activeClass : "border-transparent"
+                                    }  rounded-t-lg`}>
                                 Reposts
                             </Link>
                         </li>
                         <li className="me-2">
                             <Link
-                                to="?feed=liked"
-                                className={`inline-block px-12 pb-2 ${feed == 'liked' && activeClass || 'border-transparent'} rounded-t-lg`}>
+                                to="liked"
+                                className={`inline-block sm:px-12 px-5 pb-2 dark:text-white ${location.pathname.endsWith("/liked") ? activeClass : "border-transparent"
+                                    }  rounded-t-lg`}>
                                 Liked
                             </Link>
                         </li>
                     </ul>
                 </div>
 
-                <div className='w-full pt-12'>
+                <div className='w-full pt-4'>
                     <Outlet />
                 </div>
             </div>
