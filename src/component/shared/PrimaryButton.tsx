@@ -15,7 +15,6 @@ const PrimaryButton = ({
              text-white rounded-[5px] bg-primary OnestMedium hover:opacity-[0.9]
               ease-in-out duration-150 flex justify-center items-center gap-3`}>
             
-            
             {children}
         </button>
     )

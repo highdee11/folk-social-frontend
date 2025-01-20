@@ -8,7 +8,11 @@ import { AuthSliceAction } from "../../../store/slices/AuthSlice";
 const useAuth = ()=> {
     const dispatch = useDispatch();
     
-    const signInData: SignInCredentials = {username: import.meta.env.VITE_DEMO_USERNAME, password: import.meta.env.VITE_DEMO_PASSWORD}
+    const signInData: SignInCredentials = {
+        username: import.meta.env.VITE_DEMO_USERNAME, 
+        password: import.meta.env.VITE_DEMO_PASSWORD
+    }
+
     const signUpData: SignUpRequest = {
         username: import.meta.env.VITE_DEMO_USERNAME, password: import.meta.env.VITE_DEMO_PASSWORD,
         firstname: "",
@@ -16,6 +20,7 @@ const useAuth = ()=> {
         email: "",
         dob:""
     }
+    
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const [error, setError] = useState<string | null>(null)
     

@@ -4,7 +4,7 @@ const CustomInput: React.FC<CustomInputProps> = ({ label, name, type, value, pre
 
     return (
         <div className="w-full">
-            <label htmlFor={name} className="block mb-2 text-sm OnestRegular text-[#101010]">{label}</label>
+            <label htmlFor={name} className="block mb-2 text-sm OnestRegular text-[#101010] dark:text-grayText">{label}</label>
             <div className='relative'>
                 { prefixIcon }
                 <input 
