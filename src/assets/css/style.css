@@ -86,7 +86,7 @@ svg {
 }
 
 .profileBg{
-  background-image: url("../images/profileBg.png");
+  background-image: url("../images/dotsBg.png");
   background-size: cover;
   background-repeat: no-repeat;
 }
