@@ -15,7 +15,7 @@ const CustomPasswordInput = ({
 
     return (
         <>
-            <label htmlFor={name} className="block mb-2 text-sm OnestRegular text-[#101010]">{label}</label>
+            <label htmlFor={name} className="block mb-2 text-sm OnestRegular text-[#101010] dark:text-grayText">{label}</label>
                 <div className='relative'>
                     <span className=' absolute bottom-0 top-0 m-auto h-fit w-fit left-4'>
                         <svg width="21" height="21" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">

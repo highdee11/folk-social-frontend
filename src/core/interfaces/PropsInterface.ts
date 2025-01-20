@@ -1,7 +1,6 @@
 import { ChangeEventHandler, MouseEventHandler, ReactNode } from "react";
 
-export interface PrimaryButtonProps {
-    label: string;
+export interface PrimaryButtonProps { 
     disabled?: boolean;
     onTap?: MouseEventHandler;
     type?: "submit" | "button" | "reset" | undefined,
@@ -20,6 +19,7 @@ export interface CustomInputProps {
     type: string;
     name: string;
     value: string;
+    attributes?: any;
     onChange: ChangeEventHandler,
     prefixIcon?: ReactNode
 }

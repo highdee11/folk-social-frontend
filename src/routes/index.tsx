@@ -8,6 +8,7 @@ import Profile from "../views/profile/Profile";
 import Videos from "../views/profile/Videos";
 import Repost from "../views/profile/Repost";
 import Liked from "../views/profile/Liked";
+import CreateAccount from "../views/auth/CreateAccount";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
 
             {/* ==================== AUTH ROUTE  ======================= */}
             <Route path={routes.login} element={<Login />}> </Route>
+            <Route path={routes.createAccount} element={<CreateAccount />}> </Route>
 
             <Route path="" element={<AuthenticatedWrapper />}>
                 <Route path={routes.home} element={<Home />}></Route>
