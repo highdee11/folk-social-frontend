@@ -3,5 +3,6 @@ export const routes = {
     feed: '/feed',
     login: '/login',
     createAccount: '/create-account',
-    search: '/search'
+    search: '/search',
+    interests: "/interests"
 }

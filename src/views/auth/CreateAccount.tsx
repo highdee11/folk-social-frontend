@@ -28,15 +28,17 @@ const CreateAccount = () => {
 
     const submit = (e: FormEvent) => {
         e.preventDefault();
+        if (isLoading) return;
+        
         const payload = {
             ...credentials,
             dob: handleDateFormat(credentials.dob)
         }
-        if (isLoading) return;
+
         SignUp(payload)
-            .then(() => {
-                navigate(routes.login)
-            })
+        .then(() => {
+            navigate(routes.login)
+        })
     }
     const handleDateFormat = (value: any)=>{
         const [year, month, day] = value.split('-');

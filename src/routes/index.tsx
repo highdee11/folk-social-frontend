@@ -5,6 +5,8 @@ import Search from "../views/Search";
 import { routes } from "../core/data/route";
 import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper"; 
 import CreateAccount from "../views/auth/CreateAccount";
+import ChooseInterest from "../views/tag/ChooseInterest";
+import Layout from "../component/Layout";
 
 const AppRoutes = () => {
     return (
@@ -15,8 +17,15 @@ const AppRoutes = () => {
             <Route path={routes.createAccount} element={<CreateAccount />}> </Route>
 
             <Route path="" element={<AuthenticatedWrapper />}>
-                <Route path={routes.home} element={<Home />}></Route>
-                <Route path={routes.search} element={<Search />} />
+
+                {/* ====================  Routes with sidebar layouts ==================== */}
+                <Route path="" element={<Layout />}>
+                    <Route path={routes.home} element={<Home />} />
+                    <Route path={routes.search} element={<Search />} />
+                </Route>
+
+                {/* ==================== Routes with no sidebar ======================== */}
+                <Route path={routes.interests} element={<ChooseInterest />} />
             </Route>
 
         </Routes>

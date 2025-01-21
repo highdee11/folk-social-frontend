@@ -8,3 +8,7 @@ export class ThemeConst {
     public static DARK = 'dark';
 }
  
+export class TagConst {
+    public static minSelection = 5;
+    public static maxSelection = 10;
+}

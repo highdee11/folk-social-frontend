@@ -1,7 +1,7 @@
 
 import { useSelector } from "react-redux"
 import { RootState } from "../../store"
-import { Navigate, Route } from "react-router-dom"
+import { Navigate, Outlet, Route } from "react-router-dom"
 import { routes } from "../../core/data/route"
 import Layout from "../../component/Layout"
 import useUser from "../../core/hooks/auth/useUser"
@@ -19,7 +19,13 @@ const AuthenticatedWrapper = ()=> {
     
     const hasToken = useSelector((state: RootState)=> state.auth.auth_token) && true
 
-    return hasToken? <Layout /> : <Navigate to={routes.login} />
+    return hasToken? 
+        <div>
+            <div className="p-5 relative bg-lightFaintGray dark:bg-[#101010] h-screen overflow-hidden">
+                <Outlet />
+            </div>
+        </div>
+     : <Navigate to={routes.login} />
 }
 
 export default AuthenticatedWrapper;
