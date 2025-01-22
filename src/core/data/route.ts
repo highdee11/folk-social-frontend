@@ -4,5 +4,6 @@ export const routes = {
     login: '/login',
     createAccount: '/create-account',
     search: '/search',
-    interests: "/interests"
+    interests: "/interests",
+    createAccountSuccessfully: '/account-created-successfully'
 }

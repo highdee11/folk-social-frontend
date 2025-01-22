@@ -7,6 +7,7 @@ import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper";
 import CreateAccount from "../views/auth/CreateAccount";
 import ChooseInterest from "../views/tag/ChooseInterest";
 import Layout from "../component/Layout";
+import CreateAccountSuccessPage from "../views/auth/CreateAccountSuccessPage";
 
 const AppRoutes = () => {
     return (
@@ -15,6 +16,7 @@ const AppRoutes = () => {
             {/* ==================== AUTH ROUTE  ======================= */}
             <Route path={routes.login} element={<Login />}> </Route>
             <Route path={routes.createAccount} element={<CreateAccount />}> </Route>
+            <Route path={routes.createAccountSuccessfully} element={<CreateAccountSuccessPage />}> </Route>
 
             <Route path="" element={<AuthenticatedWrapper />}>
 
