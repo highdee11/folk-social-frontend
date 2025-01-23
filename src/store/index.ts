@@ -1,9 +1,14 @@
 import { configureStore } from "@reduxjs/toolkit";
 import AuthSlice from "./slices/AuthSlice";
 import ThemeSlice from "./slices/ThemeSlice";
+import { ProfileSlice } from "./slices/ProfileSlice";
 
 const store = configureStore({
-    reducer: {auth: AuthSlice.reducer, theme: ThemeSlice.reducer},
+    reducer: {
+        auth: AuthSlice.reducer,
+        theme: ThemeSlice.reducer,
+        profile: ProfileSlice.reducer
+    },
 })
 
 export default store;

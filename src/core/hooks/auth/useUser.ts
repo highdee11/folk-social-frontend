@@ -3,6 +3,8 @@ import { RootState } from "../../../store"
 import ApiService from "../../services/ApiService"
 import { DefaultRequestResponse } from "../../interfaces/ApiServiceInterface"
 import { AuthSliceAction } from "../../../store/slices/AuthSlice"
+import { ProfileSliceAction } from "../../../store/slices/ProfileSlice"
+import { UserPreference } from "../../interfaces/ModelInterface"
 
 const useUser = ()=> {
 
@@ -11,18 +13,19 @@ const useUser = ()=> {
     const authToken = useSelector((state: RootState)=> state.auth.auth_token)
     const user = useSelector((state: RootState)=> state.auth.user)
     
+    
 
     const getUser = async ()=>{
         const apiService = new ApiService();
         const data:DefaultRequestResponse = await apiService.get<DefaultRequestResponse>("/api/user")
         dispatch(AuthSliceAction.setUser(data.data))
     }
-
+    
 
     return {
         user,
-        authToken,
-        getUser
+        authToken, 
+        getUser, 
     }
 }
 

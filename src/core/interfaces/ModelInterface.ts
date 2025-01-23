@@ -4,3 +4,11 @@ export interface User {
     firstname: string,
     lastname: string,
 }
+
+export interface Tag {
+    name: string
+}
+
+export interface UserPreference {
+    has_interest: boolean
+}

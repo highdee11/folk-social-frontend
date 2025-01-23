@@ -6,4 +6,6 @@ export const routes = {
     profile: '/profile',
     videos: 'videos',
     createAccount: '/create-account',
+    interests: "/interests",
+    createAccountSuccessfully: '/account-created-successfully'
 }
