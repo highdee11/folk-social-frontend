@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import AuthPageWrapper from "./AuthPageWrapper";
 import PublicWrapper from "./PublicWrapper"
 import { useState, FormEvent, ChangeEvent } from "react";
@@ -37,7 +37,8 @@ const CreateAccount = () => {
 
         SignUp(payload)
         .then(() => {
-            navigate(routes.createAccountSuccessfully)
+            navigate(`${routes.createAccountSuccessfully}?email=${credentials.email}`)
+            
         })
     }
     const handleDateFormat = (value: any)=>{

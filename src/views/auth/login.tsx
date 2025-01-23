@@ -1,10 +1,10 @@
 import LoginImg from '../../assets/images/UP.png';
 import useAuth from '../../core/hooks/auth/useAuth';
 import { SignInCredentials, SignInRequest } from '../../core/interfaces/AuthInterface';
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
 import Error from '../../component/shared/Error';
 import PrimaryButton from '../../component/shared/PrimaryButton';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { routes } from '../../core/data/route'; 
 import PublicWrapper from './PublicWrapper';
 import CustomInput from '../../component/forms/CustomInput';
@@ -16,10 +16,15 @@ const Login = () => {
 
     const { signin, signInData, isLoading, error } = useAuth()
     const navigate = useNavigate()
-
+    const [ searchParams ] = useSearchParams()
 
     const [credentials, setCredentails] = useState<SignInCredentials>(signInData)
     const handleChanges = (field:string, value:any)=> setCredentails({...credentials, [field]: value })
+
+    useEffect(()=>{
+        setCredentails({...credentials, username: searchParams.get('email') || ''})
+    }, [searchParams])
+
 
     const submit = (e: FormEvent)=>{
         e.preventDefault();
