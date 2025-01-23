@@ -4,12 +4,13 @@ import { initFlowbite } from "flowbite";
 import Avatar from '../../assets/images/avatar1.png';
 import { useEffect } from "react";
 import { toast } from 'react-toastify';
+import PostSkeletonItem from '../../component/PostSkeletonItem';
 
 
-const FYP = ()=> { 
+const FYP = () => {
 
     return (
-        <ul className="space-y-5 w-full flex justify-between items-start flex-col">
+        <ul className="space-y-5 w-full flex justify-between items-start flex-col h-[900px] overflow-y-scroll">
 
             <li className="w-full">
                 <div className=" w-[600px] post_box mx-auto dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px] pt-5">
@@ -189,6 +190,10 @@ const FYP = ()=> {
                         </ul>
                     </div>
                 </div>
+            </li>
+
+            <li className="w-full">
+                <PostSkeletonItem />
             </li>
 
         </ul>
