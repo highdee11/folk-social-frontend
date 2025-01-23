@@ -1,5 +1,5 @@
 import { ThemeConst } from "../data/const";
-import { User } from "./ModelInterface";
+import { User, UserPreference } from "./ModelInterface";
 
 export interface AuthSliceInterface {
     auth_token: string|null,
@@ -9,4 +9,8 @@ export interface AuthSliceInterface {
 
 export interface ThemeSliceInterface {
     mode: 'light'|'dark'
+}
+
+export interface ProfileSliceInterface {
+    preference: UserPreference|null
 }

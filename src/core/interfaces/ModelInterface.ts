@@ -8,3 +8,7 @@ export interface User {
 export interface Tag {
     name: string
 }
+
+export interface UserPreference {
+    has_interest: boolean
+}

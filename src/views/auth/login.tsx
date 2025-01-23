@@ -7,7 +7,6 @@ import PrimaryButton from '../../component/shared/PrimaryButton';
 import { Link, useNavigate } from 'react-router-dom';
 import { routes } from '../../core/data/route'; 
 import PublicWrapper from './PublicWrapper';
-import ToggleThemeItem from '../../component/shared/ToggleThemeItem';
 import CustomInput from '../../component/forms/CustomInput';
 import CustomPasswordInput from '../../component/forms/CustomPasswordInput';
 import AuthPageWrapper from './AuthPageWrapper';
