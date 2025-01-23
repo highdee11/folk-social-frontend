@@ -37,7 +37,7 @@ const CreateAccount = () => {
 
         SignUp(payload)
         .then(() => {
-            navigate(routes.login)
+            navigate(routes.createAccountSuccessfully)
         })
     }
     const handleDateFormat = (value: any)=>{
