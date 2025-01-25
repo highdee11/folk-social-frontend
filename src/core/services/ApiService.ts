@@ -68,7 +68,7 @@ export default class ApiService implements ApiServiceInterface{
     
     handleError(result:AxiosError){  
         console.log(result)
-        let message = result.data?.message || result.message || "Error occured while fetching data!";
+        let message = result.data?.message || result.response?.data?.message || result.message || "Error occured while fetching data!";
  
         if(result.status == 401){
             AuthService.logout()

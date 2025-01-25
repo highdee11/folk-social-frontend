@@ -15,9 +15,9 @@ export interface SideBarMenuItemProps {
 }
 
 export interface CustomInputProps {
-    label: string;
+    label?: string;
     type: string;
-    name: string;
+    name?: string;
     value: string;
     attributes?: any;
     onChange: ChangeEventHandler,

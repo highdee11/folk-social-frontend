@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../views/auth/Login";
 import Home from "../views/posts";
-import Search from "../views/Search";
+import UserSuggestions from "../views/UserSuggestions";
 import { routes } from "../core/data/route";
 import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper";
 import Profile from "../views/profile/Profile";
@@ -28,7 +28,7 @@ const AppRoutes = () => {
                 {/* ====================  Routes with sidebar layouts ==================== */}
                 <Route path="" element={<Layout />}>
                     <Route path={routes.home} element={<Home />} />
-                    <Route path={routes.search} element={<Search />} />
+                    <Route path={routes.UserSuggestions} element={<UserSuggestions />} />
                     <Route path={routes.profile} element={<Profile />} >
                     <Route index element={<Navigate to="videos" replace />} />
                     <Route path="videos" element={<Videos />} />

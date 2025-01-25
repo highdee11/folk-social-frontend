@@ -22,23 +22,25 @@ const AuthenticatedWrapper: React.FC = ()=> {
         if(preference == null){
             actions.push(getUserPreference())
         }
-        Promise.all(actions).then(()=> {
-            setLoading(false); 
-        })
+ 
+        Promise.all(actions).then(()=> {setLoading(false); })
     }, [preference])
     
     const isAuthenticated = useSelector((state: RootState)=> state.auth.auth_token) && true
 
-    
+    // Show initial app loader
     if(loading) { return <div className=""></div> }
     
+    // Authenticiated user
     if(isAuthenticated){
+
+        // Redirect to pick interest
         if(!preference?.has_interest && location.pathname != routes.interests) {
             return <Navigate to={routes.interests} />
         }
 
         return (<div>
-            <div className="p-5 h-screen relative overflow-hidden">
+            <div className="h-screen relative overflow-hidden">
                 <Outlet />
             </div>
         </div>)

@@ -4,14 +4,16 @@ import useTags from "../../core/hooks/post/useTags";
 import { Tag } from "../../core/interfaces/ModelInterface";
 import useProfile from "../../core/hooks/user/useProfile";
 import { TagConst } from "../../core/data/const";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { routes } from "../../core/data/route";
 
 const ChooseInterest = ()=> {
 
     const { tags, selectedTags, fetchTags, selectTag } = useTags()
     const { interests, updateInterest, listInterest, } = useProfile()
+    const [searchParams] = useSearchParams();
     const navigate = useNavigate()
+    
 
     useEffect(()=> { 
         // Fetch platform tags
@@ -28,6 +30,10 @@ const ChooseInterest = ()=> {
 
         updateInterest(selectedTags)
         .then(()=> {
+            if(searchParams.get("redirect")){
+                navigate(searchParams.get('redirect')!)
+                return;
+            }
             navigate(routes.home)
         })
     }
@@ -52,7 +58,7 @@ const ChooseInterest = ()=> {
                     }
                 </ul>
             </div>
-            <div className="w-[150px] mx-auto mt-5">
+            <div className="w-[150px] mx-auto mt-5 mb-3">
                 <PrimaryButton 
                     disabled={selectedTags.length < TagConst.minSelection}
                     onTap={proceed}

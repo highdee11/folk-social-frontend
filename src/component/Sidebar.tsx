@@ -5,6 +5,7 @@ import { RootState } from '../store';
 import AuthService from '../core/services/AuthService';
 import ToggleThemeItem from './shared/ToggleThemeItem';
 import useTheme from '../core/hooks/useTheme';
+import { routes } from '../core/data/route';
 
 const Sidebar = () => {
     const { darkMode } = useTheme()
@@ -39,7 +40,7 @@ const Sidebar = () => {
                     </li>
 
                     <li> 
-                        <SideBarMenuItem url='/search' darkMode={darkMode} label='Search'>
+                        <SideBarMenuItem url={routes.UserSuggestions} darkMode={darkMode} label='Search'>
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="11.7669" cy="11.7666" r="8.98856" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

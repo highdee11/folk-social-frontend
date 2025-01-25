@@ -10,5 +10,5 @@ export class ThemeConst {
  
 export class TagConst {
     public static minSelection = 5;
-    public static maxSelection = 10;
+    public static maxSelection = 20;
 }

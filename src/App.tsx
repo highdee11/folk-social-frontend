@@ -7,7 +7,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className=" bg-lightFaintGray dark:bg-[#101010] h-screen">
+      <div className="bg-lightFaintGray dark:bg-[#101010] h-screen">
       <AppRoutes />
       </div>
       
