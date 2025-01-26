@@ -12,3 +12,8 @@ export class TagConst {
     public static minSelection = 5;
     public static maxSelection = 20;
 }
+
+export class FeedType {
+    public static following = "following"
+    public static foryou = "foryou"
+}

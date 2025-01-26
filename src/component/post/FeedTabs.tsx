@@ -1,8 +1,7 @@
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const FeedTabs = ()=> {
-
-    const navigate = useNavigate();
+ 
     const [ searchParams ] = useSearchParams()
 
     const feed = searchParams.get('feed')

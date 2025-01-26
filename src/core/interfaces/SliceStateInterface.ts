@@ -1,5 +1,5 @@
 import { ThemeConst } from "../data/const";
-import { User, UserPreference } from "./ModelInterface";
+import { Post, User, UserPreference } from "./ModelInterface";
 
 export interface AuthSliceInterface {
     auth_token: string|null,
@@ -13,4 +13,11 @@ export interface ThemeSliceInterface {
 
 export interface ProfileSliceInterface {
     preference: UserPreference|null
+}
+
+export interface PostSliceInterface {
+    followedPosts: Post[],
+    forYouPosts: Post[],
+    isLoadingFollowedPosts: boolean,
+    isLoadingForYouPosts: boolean,
 }

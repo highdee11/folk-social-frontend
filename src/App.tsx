@@ -8,7 +8,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="bg-lightFaintGray dark:bg-[#101010] h-screen">
-      <AppRoutes />
+        <AppRoutes />
       </div>
       
       <ToastContainer />
