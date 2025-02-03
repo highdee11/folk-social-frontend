@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from "react-redux";
 import ApiService from "../../services/ApiService";
 import { DefaultRequestResponse } from "../../interfaces/ApiServiceInterface";
 import { Paginated, Post } from "../../interfaces/ModelInterface";
-import { useState } from "react";
 import { RootState } from "../../../store";
 import { PostSliceActions } from "../../../store/slices/PostSlice";
 

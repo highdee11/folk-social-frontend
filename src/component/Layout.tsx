@@ -18,7 +18,7 @@ const Layout = () => {
                 </div>
             </aside>
 
-            <div className=" lg:w-[calc(100%-322px)] w-full h-full lg:mx-auto mx-auto mt-5 ml-auto lg:mr-10 mr-auto">
+            <div className=" lg:w-[calc(100%-322px)] w-full h-full lg:mx-auto mx-auto ml-auto lg:mr-10 mr-auto">
                 <Outlet />
             </div> 
 

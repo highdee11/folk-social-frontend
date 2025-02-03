@@ -4,14 +4,16 @@ import FYP from "./FYP";
 const Home = () => { 
     
     return (
-        <div className=" relative lg:w-auto w-[98%] lg:mx-0 mx-auto">
-            <div id="posts" className="h-full px-3">
+        <div className="h-full relative lg:w-auto w-[98%] lg:mx-0 mx-auto">
+            <div id="posts" className="h-full flex flex-col px-3">
                 {/* TABS */} 
                 
-                <FeedTabs />
+                <div className="">
+                    <FeedTabs />
+                </div>
 
                 {/* BODY */}
-                <div className="">
+                <div className="h-full">
                     <FYP />
                 </div>
             </div>

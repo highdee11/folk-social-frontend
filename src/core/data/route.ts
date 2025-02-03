@@ -8,5 +8,6 @@ export const routes = {
     videos: 'videos',
     createAccount: '/create-account',
     interests: "/interests",
-    createAccountSuccessfully: '/account-created-successfully'
+    createAccountSuccessfully: '/account-created-successfully',
+    viewPost: "/post/:id"
 }

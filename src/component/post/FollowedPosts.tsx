@@ -3,14 +3,14 @@ import usePosts from "../../core/hooks/post/usePosts"
 import PostSkeletonItem from "../PostSkeletonItem"
 import EmptyContent from "../shared/EmptyContent"
 import { routes } from "../../core/data/route"
-import { Link } from "react-router-dom"
+import { Link, Navigate } from "react-router-dom"
 import { Post } from "../../core/interfaces/ModelInterface"
-import ProfileIcon from "../shared/ProfileIcon"
 import SinglePostItem from "./SinglePostItem"
 
 const FollowedPosts:React.FC<{}> = ()=> {
 
     const {loadingFollowed, followedPosts, getFollowedPost } = usePosts()
+    
 
     useEffect(()=> {
         if(followedPosts.length == 0){
@@ -20,7 +20,7 @@ const FollowedPosts:React.FC<{}> = ()=> {
     
 
     return (
-        <ul className="space-y-5 w-full flex justify-between items-start flex-col h-[900px] overflow-y-scroll">
+        <ul className="space-y-5 w-full h-full py-5">
 
             {
                 loadingFollowed ? (
@@ -38,7 +38,7 @@ const FollowedPosts:React.FC<{}> = ()=> {
                 
                 (
                     followedPosts.map((post:Post)=> (
-                        <li key={post.id} className="w-full first:mt-10">
+                        <li key={post.id} className="w-full h-full hover:cursor-pointer">
                             <SinglePostItem post={post} />
                         </li>
                     ))

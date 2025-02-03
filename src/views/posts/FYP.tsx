@@ -2,7 +2,6 @@
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import FollowedPosts from '../../component/post/FollowedPosts';
-import { routes } from '../../core/data/route';
 import { FeedType } from '../../core/data/const';
 
 

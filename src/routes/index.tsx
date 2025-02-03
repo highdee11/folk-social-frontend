@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../views/auth/Login";
-import Home from "../views/posts";
+import Home from "../views/posts/Index";
 import UserSuggestions from "../views/UserSuggestions";
 import { routes } from "../core/data/route";
 import AuthenticatedWrapper from "../views/auth/AuthenticatedWrapper";
@@ -12,6 +12,7 @@ import CreateAccount from "../views/auth/CreateAccount";
 import ChooseInterest from "../views/tag/ChooseInterest";
 import Layout from "../component/Layout";
 import CreateAccountSuccessPage from "../views/auth/CreateAccountSuccessPage";
+import ViewPost from "../views/posts/ViewPost";
 
 const AppRoutes = () => {
     return (
@@ -27,6 +28,7 @@ const AppRoutes = () => {
 
                 {/* ====================  Routes with sidebar layouts ==================== */}
                 <Route path="" element={<Layout />}>
+                    <Route path={routes.viewPost} element={<ViewPost />} />
                     <Route path={routes.home} element={<Home />} />
                     <Route path={routes.UserSuggestions} element={<UserSuggestions />} />
                     <Route path={routes.profile} element={<Profile />} >

@@ -41,4 +41,17 @@ export interface Post {
     parent_post?: Post|null;
     tags: Tag[];
     since: string;
+    statistics: PostStatistics
+}
+
+export interface PostStatistics {
+    comment_count: PostStatisticsItem,
+    post_likes: PostStatisticsItem,
+}
+
+export interface PostStatisticsItem {
+    type: string,
+    data: {
+        count: number
+    }
 }
