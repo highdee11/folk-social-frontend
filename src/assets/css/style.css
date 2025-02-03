@@ -61,7 +61,7 @@ svg {
 } 
  
 
-.dark span svg path{
+.dark sidebar span svg path{
   stroke: white;
 }
 

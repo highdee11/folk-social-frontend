@@ -6,10 +6,10 @@ const ViewPost = ()=> {
 
     const location = useLocation()
     const params = useParams()
-    const { loading, getSinglePost } = usePost()
+    const { loading, getSinglePost } = usePost(params.id as unknown as number)
 
     useEffect(()=> {
-        getSinglePost(params.id as unknown as number)
+        getSinglePost()
     }, [location])
 
     return (

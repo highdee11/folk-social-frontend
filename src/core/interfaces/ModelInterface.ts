@@ -42,8 +42,9 @@ export interface Post {
     media: PostMedia[];
     parent_post?: Post|null;
     tags: Tag[];
+    hasLiked: boolean;
     since: string;
-    statistics: PostStatistics,
+    statistics: PostStatistics;
 }
 
 export interface PostStatistics {

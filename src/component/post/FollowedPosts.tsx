@@ -84,7 +84,7 @@ const FollowedPosts:React.FC = ()=> {
                     (
                         followedPosts.map((post:Post, index)=> (
                             <li ref={(el)=> (postRefs.current[index] = el)} key={post.id} 
-                                className=" w-full h-full  hover:cursor-pointer">
+                                className=" w-full h-full ">
                                 <SinglePostItem post={post} />
                             </li>
                         ))
