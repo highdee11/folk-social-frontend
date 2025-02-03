@@ -1,3 +1,4 @@
+import { MutableRefObject } from "react";
 import { ThemeConst } from "../data/const";
 import { Post, User, UserPreference } from "./ModelInterface";
 
@@ -18,6 +19,7 @@ export interface ProfileSliceInterface {
 export interface PostSliceInterface {
     followedPosts: Post[],
     forYouPosts: Post[],
+    currentPostIndex: number,
     isLoadingFollowedPosts: boolean,
     isLoadingForYouPosts: boolean,
 }

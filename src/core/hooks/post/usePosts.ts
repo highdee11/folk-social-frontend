@@ -4,6 +4,7 @@ import { DefaultRequestResponse } from "../../interfaces/ApiServiceInterface";
 import { Paginated, Post } from "../../interfaces/ModelInterface";
 import { RootState } from "../../../store";
 import { PostSliceActions } from "../../../store/slices/PostSlice";
+import React, { Ref, RefObject, useRef, useState } from "react";
 
 const usePosts = ()=> {
 
@@ -12,13 +13,26 @@ const usePosts = ()=> {
 
     const loadingFollowed = useSelector((state: RootState)=> state.posts.isLoadingFollowedPosts)
     const followedPosts = useSelector((state: RootState)=> state.posts.followedPosts)
+    const currentPostIndex = useSelector((state: RootState)=> state.posts.currentPostIndex)
     
+    
+    const moveToNextPost = ()=> {
+        if(currentPostIndex == followedPosts.length - 1) return;
+        dispatch(PostSliceActions.setCurrentPostIndex(currentPostIndex+1))
+    }
+
+    const moveToPrevPost = ()=> {
+        if(currentPostIndex == 0) return;
+        dispatch(PostSliceActions.setCurrentPostIndex(currentPostIndex-1))
+    }
 
     const getFollowedPost = async ()=> {
         try{
             dispatch(PostSliceActions.toggleLoadingFollowedPost(true))
             const result: DefaultRequestResponse<Paginated<Post>> = await apiService.get("/api/post/followed")
-            dispatch(PostSliceActions.setFollowedPost(result.data?.content))
+
+            let posts:Post[] = result.data?.content ?? []
+            dispatch(PostSliceActions.setFollowedPost(posts))
         }finally {
             dispatch(PostSliceActions.toggleLoadingFollowedPost(false))
         }
@@ -27,7 +41,10 @@ const usePosts = ()=> {
     return {
         followedPosts,
         loadingFollowed,
-        getFollowedPost
+        currentPostIndex,
+        getFollowedPost,
+        moveToNextPost,
+        moveToPrevPost
     }
 }
 

@@ -18,13 +18,13 @@ const FeedTabs = ()=> {
                         Following
                     </Link>
                 </li>
-                <li className="me-2">
+                {/* <li className="me-2">
                     <Link 
                         to="?feed=foryou" 
                         className={`inline-block p-4 ${feed == 'foryou' && activeClass || 'border-transparent'} rounded-t-lg`}>
                         For you
                     </Link>
-                </li> 
+                </li>  */}
             </ul>
         </div>
     )

@@ -1,3 +1,5 @@
+import { Ref, RefObject } from "react";
+
 export interface User {
     id: number,
     email: string,
@@ -41,7 +43,7 @@ export interface Post {
     parent_post?: Post|null;
     tags: Tag[];
     since: string;
-    statistics: PostStatistics
+    statistics: PostStatistics,
 }
 
 export interface PostStatistics {

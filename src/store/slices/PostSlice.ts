@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PostSliceInterface } from "../../core/interfaces/SliceStateInterface";
+import { useRef } from "react";
 
 const initialState: PostSliceInterface = {
     followedPosts: [],
     forYouPosts: [],
+    currentPostIndex: 0,
     isLoadingFollowedPosts: false,
-    isLoadingForYouPosts: false
+    isLoadingForYouPosts: false,
 }
 
 export const PostSlice = createSlice({
@@ -24,6 +26,9 @@ export const PostSlice = createSlice({
         toggleLoadingForYouPost: (state, action)=> {
             state.isLoadingForYouPosts = action.payload
         },
+        setCurrentPostIndex: (state, action)=> {
+            state.currentPostIndex = action.payload
+        }
     }
 })
  

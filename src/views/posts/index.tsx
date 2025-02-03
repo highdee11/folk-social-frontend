@@ -13,7 +13,7 @@ const Home = () => {
                 </div>
 
                 {/* BODY */}
-                <div className="h-full">
+                <div className="h-[calc(100%-50px)]">
                     <FYP />
                 </div>
             </div>

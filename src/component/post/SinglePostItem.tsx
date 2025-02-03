@@ -1,17 +1,14 @@
-import React, { useRef } from "react"
+import React, {  } from "react"
 import { Post, Tag } from "../../core/interfaces/ModelInterface"
 import ProfileIcon from "../shared/ProfileIcon";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { routes } from "../../core/data/route";
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import PostMediaWrapper from "./PostMediaWrapper";
 
 const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
 
     const navigate = useNavigate();
-    const mediaSize = post.media.length;
-    const subMedia = post.media.slice(0, Math.min(3, mediaSize))
-    const subText = post.content.length > 200? post.content.substring(0, 200)+ "...": post.content;
+    const subText = post.content.length > 300? post.content.substring(0, 300)+ "...": post.content;
  
     
     const openPost = ()=> {
@@ -19,8 +16,8 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
     }
 
     return (
-        <div className="w-[500px] h-[95%] post_box mx-auto dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px] pt-3">
-            <div className="flex flex-col justify-between h-full">
+        <div className="w-[500px] h-full post_box mx-auto content-center">
+            <div className="flex flex-col justify-between py-3 h-full max-h-[850px] dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px]">
                  {/* Header */}
                 <div className="flex justify-between items-start pb-3 px-4">
 
@@ -43,38 +40,17 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                     </div> */}
                 </div>
                 
-                <div className="h-full flex flex-col justify-between">
+                <div className="h-full flex flex-col">
 
-                    {/* Images */}
-                    <div className="h-full relative">
-                        {
-                            subMedia.length > 0 ? (<div className={`absolute h-full inset-0 bg-[url('https://media.istockphoto.com/id/1458782106/photo/scenic-aerial-view-of-the-mountain-landscape-with-a-forest-and-the-crystal-blue-river-in.jpg?s=2048x2048&w=is&k=20&c=jbXMS_yFujUo29EIjPd8XBsEan-PAHUcPs0Zo1-HY_U=')] bg-cover bg-center`}></div>): ""
-                        }
-                        <div className={`absolute flex backdrop-blur-md items-center bg-black/20 gap-2 h-full`}>
-                            <Carousel 
-                                showThumbs={false}
-                            >
-                                {subMedia.map((image, index) => (
-                                    <div
-                                        key={index}
-                                        className={`block h-fit`}>
-                                        <img
-                                            src={image.url}
-                                            alt={`Post ${index + 1}`}
-                                            className="w-full  object-cover"
-                                        />
-                                    </div>
-                                ))}
-                            </Carousel>
-                        </div>
-                    </div>
+                    {/* Media */}
+                    <PostMediaWrapper post={post}/>
 
                     <div className="px-4 ">
                          {/* Body */}
                         {
                             post.content && post.content.length > 0 ? (
                                 <div className="py-4">
-                                    <p className="text-darkColor overflow-y-clip text-sm dark:text-gray-200 OnestRegular">
+                                    <p className="text-darkColor max:h-[100px] overflow-y-clip text-sm dark:text-gray-200 OnestRegular">
                                         {subText}
                                     </p>
                                 </div>
@@ -92,8 +68,8 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                 </div>
 
                 {/* Footer */}
-                <div className="px-5 py-5 h-[100px]">
-                    <div className="flex dark:bg-darkColor bg-lightFaintGray rounded-full m-auto justify-between gap-5 py-4 px-5">
+                <div className="px-5">
+                    <div className="flex dark:bg-darkColor bg-lightFaintGray rounded-full m-auto justify-between gap-5 mt-3 py-4 px-5">
                         <div className="flex gap-5 ">
                             <div>
                                 <div className="flex hover:cursor-pointer justify-center items-center gap-2">
