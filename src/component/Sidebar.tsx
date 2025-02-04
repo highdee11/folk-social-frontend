@@ -15,7 +15,7 @@ const Sidebar = () => {
         <div className="px-4 pt-12 flex flex-col justify-between h-full">
             <div className=" h-full">
                 {/* LOGO */}
-                <div className="mb-7">
+                <div className="mb-7 ">
                     <div className=" w-[90px] h-[90px] bg-darkColor dark:bg-white rounded-full flex justify-center items-center relative">
                         <p className=" OnestBold text-left text-xl text-white dark:text-darkColor">
                             LOGO

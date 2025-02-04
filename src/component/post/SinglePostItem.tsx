@@ -18,10 +18,10 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
     }
 
     return (
-        <div className="w-[500px] h-full post_box mx-auto content-center">
-            <div className="flex flex-col justify-between py-3 h-full max-h-[850px] dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px]">
+        <div className="w-full sm:w-[500px] h-full mx-auto content-center">
+            <div className="flex flex-col justify-between sm:py-3 h-full sm:max-h-[850px] dark:bg-darkFaintGray bg-[#F9F9F9] sm:rounded-[8px]">
                  {/* Header */}
-                <div className="flex justify-between items-start pb-3 px-4">
+                <div className="hidden sm:flex justify-between items-start pb-3 px-4">
 
                     <div className="flex gap-3">
                         <div className="w-[40px] h-[40px] rounded-full">
@@ -70,7 +70,7 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                 </div>
 
                 {/* Footer */}
-                <div className="px-5">
+                <div className="px-5 mb-2">
                     <div className="flex dark:bg-darkColor bg-lightFaintGray rounded-full m-auto justify-between gap-5 mt-3 py-4 px-5">
                         <div className="flex gap-5 ">
                             <div>

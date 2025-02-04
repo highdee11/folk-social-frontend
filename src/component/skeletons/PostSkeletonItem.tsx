@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 
 const PostSkeletonItem = () => {
     return (
-        <div className="w-[600px] h-full post_box mx-auto content-center ">
+        <div className="md:w-[500px] w-full h-full post_box mx-auto content-center ">
             <div className="flex flex-col h-[850px] dark:bg-darkFaintGray bg-[#F9F9F9] rounded-[8px] pt-5">
                 <div className="flexjustify-between items-start pb-2 px-4">
                     <div className="flex gap-3">

@@ -40,7 +40,7 @@ const AuthenticatedWrapper: React.FC = ()=> {
         }
 
         return (<div>
-            <div className="h-screen relative overflow-hidden">
+            <div className="h-[100svh] relative overflow-hidden">
                 <Outlet />
             </div>
         </div>)
