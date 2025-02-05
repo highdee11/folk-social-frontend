@@ -1,4 +1,4 @@
-# Frontend Documentation for Folk Social App
+# Folk Social App
 
 ## Overview
 This repository contains the frontend code for the **Folk Social App**, a social networking platform built using **React** and **TypeScript**. The application enables users to connect, share posts, and interact with other users. The frontend communicates with the backend via RESTful APIs and implements a responsive design for seamless usability across devices.
