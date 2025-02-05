@@ -10,7 +10,7 @@ import PostCommentButton from "./PostCommentButton";
 const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
 
     const navigate = useNavigate();
-    const subText = post.content.length > 300? post.content.substring(0, 300)+ "...": post.content;
+    const subText = post.content.length > 200? post.content.substring(0, 200)+ "...": post.content;
  
     
     const openPost = ()=> {

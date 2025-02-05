@@ -5,6 +5,14 @@ This repository contains the frontend code for the **Folk Social App**, a social
 
 ---
 
+## Screenshots
+![Feed Post - Dark mode](./src/assets/images/screenshots/screenshot-1.png)
+![Feed Post - Light mode](./src/assets/images/screenshots/screenshot-2.png)
+![Edit Profile](./src/assets/images/screenshots/screenshot-3.png)
+![Discover Friends](./src/assets/images/screenshots/screenshot-4.png)
+![Choose Interests](./src/assets/images/screenshots/screenshot-5.png)
+---
+
 ## Features
 - **Authentication**:
   - User login and registration functionality.

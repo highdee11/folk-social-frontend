@@ -74,11 +74,13 @@ const FollowedPosts:React.FC = ()=> {
                         </li>
                     ):
                     followedPosts.length == 0? (
-                        <EmptyContent 
-                            title='No Post Available'
-                            message='Consider following top creators to get better recommendations from your friends.'>
-                            <Link to={routes.UserSuggestions} className='text-sm text-primary underline'>See Suggested Friends</Link>
-                        </EmptyContent>
+                        <div className="my-5">
+                            <EmptyContent 
+                                title='No Post Available'
+                                message='Consider following top creators to get better recommendations from your friends.'>
+                                <Link to={routes.UserSuggestions} className='text-sm text-primary underline'>See Suggested Friends</Link>
+                            </EmptyContent>
+                        </div>
                     ):
                     
                     (
