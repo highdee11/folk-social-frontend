@@ -58,3 +58,9 @@ export interface PostStatisticsItem {
         count: number
     }
 }
+
+export interface ProfileStat {
+    following: number,
+    followers: number,
+    postCount: number
+}

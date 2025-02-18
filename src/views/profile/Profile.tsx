@@ -1,9 +1,30 @@
-import { Link, Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
 import Avatar from '../../assets/images/highdee.ai.jpeg';
+import { User } from '../../core/interfaces/ModelInterface';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import useProfile from '../../core/hooks/user/useProfile';
+import { useEffect } from 'react';
+
 const Profile = () => {
+
     const activeClass = "text-primary border-b-2 border-primary";
     const location = useLocation();
+    const params = useParams()
+    const { profile, profileStat, getProfile, getProfileStat } = useProfile() 
 
+    useEffect(()=> {
+        if(params.username){
+            getProfile(params.username)
+        }
+    }, [])
+
+    useEffect(()=> {
+        if(profile){
+            getProfileStat(profile?.id)
+        }
+    }, [profile])
+ 
     return (
         <>
             <div className=" relative lg:w-auto w-[98%] mx-auto bg-darkColor mt-12 rounded-[12px] py-8 md:px-8 px-2 flex justify-between items-center gap-5 shadow-sm profileBg">
@@ -15,44 +36,40 @@ const Profile = () => {
                     </div>
 
                     <div>
-                        <p className=' text-white OnestSemiBold text-xl'>
-                            highdee.ai
-                        </p>
+                        <p className=' text-white OnestSemiBold text-xl'> { profile?.username } </p>
 
                         <div className=' mt-3'>
                             <ul className="flex flex-wrap sm:gap-4 gap-2">
                                 <li>
                                     <p className=" text-base flex justify-start items-center gap-1">
-                                        <span className=' text-white OnestMedium'>2563</span>
+                                        <span className=' text-white OnestMedium'>{profileStat?.following}</span>
                                         <span className=' text-white text-sm'>Following</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p className=" text-base  flex justify-start items-center gap-1">
-                                        <span className=' text-white OnestMedium'>2563</span>
+                                        <span className=' text-white OnestMedium'>{profileStat?.followers}</span>
                                         <span className=' text-white text-sm'>Followers</span>
                                     </p>
                                 </li>
                                 <li>
                                     <p className=" text-base  flex justify-start items-center gap-1">
-                                        <span className=' text-white OnestMedium'>661</span>
-                                        <span className=' text-white text-sm'>Likes</span>
+                                        <span className=' text-white OnestMedium'>{profileStat?.postCount}</span>
+                                        <span className=' text-white text-sm'>Posts</span>
                                     </p>
                                 </li>
                             </ul>
                         </div>
 
-                        <p className=' text-white mt-2'>
-                            Software Engineer 🇳🇬
-                        </p>
+                        <div className=' sm:block hidden mt-5'>
+                            <button className="px-5 py-2 bg-white rounded-[8px]  text-darkColor text-nowrap">
+                                Edit Profile
+                            </button>
+                        </div>
                     </div>
                 </div>
 
-                <div className=' sm:block hidden'>
-                    <button className="px-5 py-2 bg-white rounded-[8px]  text-darkColor text-nowrap">
-                        Edit Profile
-                    </button>
-                </div>
+               
             </div>
 
 

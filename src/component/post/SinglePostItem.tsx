@@ -1,7 +1,7 @@
 import React, {  } from "react"
 import { Post, Tag } from "../../core/interfaces/ModelInterface"
 import ProfileIcon from "../shared/ProfileIcon";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { routes } from "../../core/data/route";
 import PostMediaWrapper from "./PostMediaWrapper";
 import PostLikeButton from "./PostLikeButton";
@@ -20,10 +20,11 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
     return (
         <div className="w-full sm:w-[500px] h-full mx-auto content-center">
             <div className="flex flex-col justify-between sm:py-3 h-full sm:max-h-[850px] dark:bg-darkFaintGray bg-[#F9F9F9] sm:rounded-[8px]">
+
                  {/* Header */}
                 <div className="hidden sm:flex justify-between items-start pb-3 px-4">
 
-                    <div className="flex gap-3">
+                    <Link to={routes.profile.replace(":username", post.author.username)} className="flex gap-3">
                         <div className="w-[40px] h-[40px] rounded-full">
                             <ProfileIcon textSizeClass="1.2em" user={post.author} />
                         </div>
@@ -31,7 +32,7 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                             <p className=" text-darkColor dark:text-gray-200 OnestMedium">{post.author.firstname} {post.author.lastname}</p>
                             <p className=" text-grayText text-xs OnestLight dark:text-gray-400"> {post.since}</p>
                         </div>
-                    </div>
+                    </Link>
 
                     {/* <div className=" cursor-pointer">
                         <span className="text-grayText dark:text-gray-200">

@@ -4,7 +4,7 @@ export const routes = {
     login: '/login',
     search: '/search',
     UserSuggestions: "suggestions",
-    profile: '/profile',
+    profile: '/profile/:username',
     videos: 'videos',
     createAccount: '/create-account',
     interests: "/interests",
