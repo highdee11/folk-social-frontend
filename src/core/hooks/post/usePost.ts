@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import ApiService from "../../services/ApiService"
+import { Post } from "../../interfaces/ModelInterface"
+import { DefaultRequestResponse } from "../../interfaces/ApiServiceInterface"
 
 const usePost = (id: number)=> {
 
@@ -7,13 +9,14 @@ const usePost = (id: number)=> {
     const [ liked, setLiked ] = useState(false)
     const [ likeCount, setLikeCount ] = useState(0)
     const [loading, setLoading] = useState(false)
+    const [ post, setPost ] = useState<Post|null>(null)
 
     
     const getSinglePost = async ()=> {
         try {
             setLoading(true)
-            const response = await apiService.get(`api/post/${id}`)
-            console.log(response)
+            const response: DefaultRequestResponse = await apiService.get(`api/post/${id}`)
+            setPost(response.data)
         }finally {
             setLoading(false)
         }
@@ -26,6 +29,7 @@ const usePost = (id: number)=> {
     }
 
     return {
+        post,
         loading,
         liked,
         likeCount,

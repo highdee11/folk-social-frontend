@@ -24,7 +24,7 @@ const Layout = () => {
 
             <div className="lg:w-[calc(100%-322px)] w-full h-full lg:mx-auto mx-auto ml-auto lg:mr-10 mr-auto">
                 <div className="flex flex-col justify-between h-full relative">
-                    <div className="h-[calc(100%-50px)]">
+                    <div className="h-[calc(100%-50px)] md:h-full">
                         <Outlet />
                     </div>
 

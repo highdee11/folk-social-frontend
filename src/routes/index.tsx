@@ -28,7 +28,6 @@ const AppRoutes = () => {
 
                 {/* ====================  Routes with sidebar layouts ==================== */}
                 <Route path="" element={<Layout />}>
-                    <Route path={routes.viewPost} element={<ViewPost />} />
                     <Route path={routes.home} element={<Home />} />
                     <Route path={routes.UserSuggestions} element={<UserSuggestions />} />
                     <Route path={routes.profile} element={<Profile />} >
@@ -41,6 +40,7 @@ const AppRoutes = () => {
 
                 {/* ==================== Routes with no sidebar ======================== */}
                 <Route path={routes.interests} element={<ChooseInterest />} />
+                <Route path={routes.viewPost} element={<ViewPost />} />
             </Route>
 
         </Routes>

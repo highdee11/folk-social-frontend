@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import useProfile from '../../core/hooks/user/useProfile';
 import { useEffect } from 'react';
+import ProfileIcon from '../../component/shared/ProfileIcon';
 
 const Profile = () => {
 
@@ -32,7 +33,7 @@ const Profile = () => {
                 <div className=" flex justify-start items-center gap-6">
 
                     <div className=" md:w-[190px] sm:w-[110px] w-[80px] md:h-[190px] sm:h-[110px] h-[80px] bg-[#B190B6]  rounded-full">
-                        <img src={Avatar} className=' rounded-full h-full w-full' />
+                        {profile && <ProfileIcon textSizeClass="100px" user={profile} />}
                     </div>
 
                     <div>

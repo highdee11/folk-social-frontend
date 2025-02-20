@@ -43,13 +43,13 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                     </div> */}
                 </div>
                 
-                <div className="h-full flex flex-col">
+                <div className="h-full hover:cursor-pointer flex flex-col">
 
                     {/* Media */}
                     <PostMediaWrapper post={post}/>
 
-                    <div className="px-4 ">
-                         {/* Body */}
+                    <div onClick={openPost} className="px-4 ">
+                        {/* Body */}
                         {
                             post.content && post.content.length > 0 ? (
                                 <div className="py-4">
@@ -74,7 +74,7 @@ const SinglePostItem: React.FC<{post: Post}> = ({post})=> {
                 <div className="px-5 mb-2">
                     <div className="flex dark:bg-darkColor bg-lightFaintGray rounded-full m-auto justify-between gap-5 mt-3 py-4 px-5">
                         <div className="flex gap-5 ">
-                            <div>
+                            <div onClick={openPost}>
                                 <PostCommentButton id={post.id} stat={post.statistics.comment_count} />
                             </div>
 
